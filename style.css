@@ -87,9 +87,9 @@ nav {
 }
 
 /* Media query for small devices */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 200px) {
     .container {
-        flex-direction: column;
+        flex-direction: row;
         align-items: flex-start;
     }
 
@@ -99,7 +99,7 @@ nav {
 
     .navbar {
         display: none;
-        flex-direction: column;
+        flex-direction: row;
         width: 100%;
         position: absolute;
         top: 100%;
@@ -137,13 +137,13 @@ nav {
     /* Added styles for hamburger menu functionality */
     .navbar.show {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
     }
 
     .navbar li {
         display: block;
         margin: 0;
-        text-align: center;
+        text-align: right;
     }
 
     .navbar li:last-child {
