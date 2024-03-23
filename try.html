@@ -1,101 +1,183 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    
-    <title>FISP Login</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            color:  rgba(221, 161, 32, 0.973);
-            background-repeat: no-repeat;
-            background-size: cover;
-        
-            background-image: url(IM.png)
-            
-        }
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link rel="stylesheet" href="footer.css">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
 
-        #login-container {
-            background-color: #4caf50;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
-          
-        }
+.navbar {
+  overflow: hidden;
+  background-color:black; 
+  padding: 14px 20px; /* Adjust padding for better spacing */
+}
 
-        #login-btn {
-            width: 100%;
-            margin-top: 4%;
-            padding: 10px;
-           
-            color: black;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
 
-        }
-    
-     
-    </style>
+.subnav {
+  float: left;
+  overflow: hidden;
+}
+
+.subnav .subnavbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .subnav:hover .subnavbtn {
+  background-color: red;
+}
+
+.subnav-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color:black;
+  width: 100%;
+  z-index: 1;
+}
+
+.subnav-content a {
+  float: left;
+  color:white;
+  text-decoration: none;
+}
+
+.subnav-content a:hover {
+  background-color:red;
+  color: white;
+}
+
+.subnav:hover .subnav-content {
+  display: block;
+}
+
+/* Media query for small screens */
+@media screen and (max-width: 600px) {
+  .navbar a, .subnav .subnavbtn {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+  .subnav-content {
+    position: static;
+    background-color: inherit;
+    width: auto;
+  }
+}
+
+/* Keyframe animation for h1 */
+@keyframes slideIn {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Styling for h1 */
+.navbar h1 {
+  margin: 0; /* Remove default margin */
+  display: inline-block; /* Make h1 inline-block to align with image */
+  vertical-align: middle; /* Align with middle of the image */
+  color: white;
+  animation: slideIn 1s forwards; /* Apply animation */
+}
+
+.navbar img {
+  vertical-align: middle; /* Align image vertically with h1 */
+  width: 40px; /* Adjust image size */
+  margin-right: 20px; /* Add spacing between image and h1 */
+}
+</style>
 </head>
-
 <body>
-    <ul>
-        <div class="container">
-            <a href="home.html"><img src="Pic1.png" alt="E-Fisp Registration Portal"></a>
-            <h1>E-Fisp Registration Portal</h1>
-        </div>
-        
-        <li><a href="home.html"><i class="fas fa-home"></i> Home</a></li>
-        <li><a href="#news"><i class="fas fa-info-circle"></i> About</a></li>
-         <li><a href="Login.html"><i class="fas fa-sign-in-alt"></i> Login</a></li>
-         <li> 
-          <div class="dropdown">
-            <button class="dropbtn">Sign in as</button>
-            <div class="dropdown-content">
-              <a href="Leader.html">Cooperative Leader</a>
-              <a href="Member.html">Member</a>
-            </div>
-         </div>
-       </li>
-        <li>
-            <div class="dropdown">
-              <button class="dropbtn">Language</button>
-              <div class="dropdown-content">
-                <a href="Chichewa.html">Chichewa</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
-              </div>
-            </div>
-            </li>
-    </ul>
-    
-    <div id="login-container"> <a href="home.html">HOME👈</a>
-        <h2>Login</h2>  
-        <form id="login-form">
-            
-            <input type="text" id="username" required placeholder="Username"> <br><br>
-            <input type="password" id="password" placeholder="password" required><br><br>
 
-            <button type="button" id="login-btn">Login</button>
-        </form>
+<div class="navbar">
+  <a href="home.html"><img src="Pic1.png" alt="E-Fisp Registration Portal"></a>
+  <h1 style="color: orange;">E-Fisp Registration Portal</h1>
+  <a href="#home">Home <i class="fa fa-home"></i></a>
+  <div class="subnav">
+    <button class="subnavbtn">About <i class="fas fa-info-circle"></i></button>
+    <div class="subnav-content">
+      <a href="#company">E-fisp</a>
+      <a href="#team">Vision</a>
     </div>
+  </div> 
+  <div class="subnav">
+    <button class="subnavbtn">Learn <i class="fa fa-book-open"></i></button>
+    <div class="subnav-content">
+      <a href="#bring">Plant Guide</a>
+    </div>
+  </div> 
+  <div class="subnav">
+    <button class="subnavbtn">Sign in as<i class="fa fa-user"></i></button>
+    <div class="subnav-content">
+      <a href="#link1">Cooperative Leader</a>
+      <a href="#link2">Member</a>
+    </div>
+  </div>
+  <a href="#contact">Login <i class="fa fa-sign-in-alt"></i></a>
+</div>
+<br><br><br><br>
+<hr style="margin-top: 390px;">
+<footer>
+    <p>&copy; 2024 FISP Registration Web App. All rights reserved.</p>
+    <ul class="footer-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="https://www.facebook.com/your-facebook-page">Facebook</a></li>
+        <li><a href="https://www.instagram.com/your-instagram-profile">Instagram</a></li>
+    </ul>
+    <P>Powered by The Ministry of Agriculture (MOA)</P>
 
-    <script>
-        document.getElementById('login-btn').addEventListener('click', function() {
-            // Here you would add logic to handle the login process
-            // For simplicity, we'll just alert a message
-            alert('Login button clicked');
-        });
-    </script>
+    <!-- Back to Top Button -->
+    <button onclick="topFunction()" id="back-to-top-btn" title="Back to top">&#9650;</button>
+</footer>
+
+<!-- Add this script at the bottom of your HTML body -->
+<script>
+    // Get the button
+    var backToTopBtn = document.getElementById("back-to-top-btn");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () {
+        scrollFunction();
+    };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            backToTopBtn.style.display = "block";
+        } else {
+            backToTopBtn.style.display = "none";
+        }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+    }
+</script>
+
 </body>
 </html>
