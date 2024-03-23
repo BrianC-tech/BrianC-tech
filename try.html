@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>FISP Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color:  rgba(221, 161, 32, 0.973);
+            background-repeat: no-repeat;
+            background-size: cover;
+        
+            background-image: url(IM.png)
+            
+        }
+
+        #login-container {
+            background-color: #4caf50;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+          
+        }
+
+        #login-btn {
+            width: 100%;
+            margin-top: 4%;
+            padding: 10px;
+           
+            color: black;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+
+        }
+    
+     
+    </style>
+</head>
+
+<body>
+    <ul>
+        <div class="container">
+            <a href="home.html"><img src="Pic1.png" alt="E-Fisp Registration Portal"></a>
+            <h1>E-Fisp Registration Portal</h1>
+        </div>
+        
+        <li><a href="home.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="#news"><i class="fas fa-info-circle"></i> About</a></li>
+         <li><a href="Login.html"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+         <li> 
+          <div class="dropdown">
+            <button class="dropbtn">Sign in as</button>
+            <div class="dropdown-content">
+              <a href="Leader.html">Cooperative Leader</a>
+              <a href="Member.html">Member</a>
+            </div>
+         </div>
+       </li>
+        <li>
+            <div class="dropdown">
+              <button class="dropbtn">Language</button>
+              <div class="dropdown-content">
+                <a href="Chichewa.html">Chichewa</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+              </div>
+            </div>
+            </li>
+    </ul>
+    
+    <div id="login-container"> <a href="home.html">HOME👈</a>
+        <h2>Login</h2>  
+        <form id="login-form">
+            
+            <input type="text" id="username" required placeholder="Username"> <br><br>
+            <input type="password" id="password" placeholder="password" required><br><br>
+
+            <button type="button" id="login-btn">Login</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('login-btn').addEventListener('click', function() {
+            // Here you would add logic to handle the login process
+            // For simplicity, we'll just alert a message
+            alert('Login button clicked');
+        });
+    </script>
+</body>
+</html>
