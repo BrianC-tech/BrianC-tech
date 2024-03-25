@@ -2,18 +2,17 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="footer.css">
 <style>
 body {
   font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
 }
 
 .navbar {
   overflow: hidden;
-  background-color:black; 
-  padding: 14px 20px; /* Adjust padding for better spacing */
+  background-color: #333;
 }
 
 .navbar a {
@@ -25,12 +24,12 @@ body {
   text-decoration: none;
 }
 
-.subnav {
+.dropdown {
   float: left;
   overflow: hidden;
 }
 
-.subnav .subnavbtn {
+.dropdown .dropbtn {
   font-size: 16px;  
   border: none;
   outline: none;
@@ -41,117 +40,201 @@ body {
   margin: 0;
 }
 
-.navbar a:hover, .subnav:hover .subnavbtn {
+.navbar a:hover, .dropdown:hover .dropbtn {
   background-color: red;
 }
 
-.subnav-content {
+.dropdown-content {
   display: none;
   position: absolute;
-  left: 0;
-  background-color:black;
-  width: 100%;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
 
-.subnav-content a {
-  float: left;
-  color:white;
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
   text-decoration: none;
+  display: block;
+  text-align: left;
 }
 
-.subnav-content a:hover {
-  background-color:red;
-  color: white;
+.dropdown-content a:hover {
+  background-color: #ddd;
 }
 
-.subnav:hover .subnav-content {
+.dropdown:hover .dropdown-content {
   display: block;
 }
 
-/* Media query for small screens */
-@media screen and (max-width: 600px) {
-  .navbar a, .subnav .subnavbtn {
+    .container {
+      display: flex;
+      align-items: center;
+    }
+  
+    .container img {
+      width: 40px;
+      height: 50px;
+      margin-right: 10px; /* Adjust spacing between the image and heading */
+    }
+  
+    .container h1 {
+      color: orange;
+      margin: 0; /* Remove default margin */
+    }
+
+    @media only screen and (max-width: 600px) {
+  .navbar a {
     float: none;
     display: block;
-    text-align: left;
+    text-align: center;
   }
 
-  .subnav-content {
-    position: static;
-    background-color: inherit;
-    width: auto;
+  .dropdown {
+    float: none;
   }
-}
 
-/* Keyframe animation for h1 */
-@keyframes slideIn {
-  0% {
-    transform: translateX(100%);
+  .dropdown-content {
+    position: relative;
   }
-  100% {
-    transform: translateX(0);
+
+  .dropdown .dropbtn {
+    display: block;
+    width: 100%;
+    text-align: center;
   }
 }
 
-/* Styling for h1 */
-.navbar h1 {
-  margin: 0; /* Remove default margin */
-  display: inline-block; /* Make h1 inline-block to align with image */
-  vertical-align: middle; /* Align with middle of the image */
-  color: white;
-  animation: slideIn 1s forwards; /* Apply animation */
+    
+
+    .imagesb {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.navbar img {
-  vertical-align: middle; /* Align image vertically with h1 */
-  width: 40px; /* Adjust image size */
-  margin-right: 20px; /* Add spacing between image and h1 */
+.image-container {
+    margin-bottom: 20px; /* Adjust spacing between images */
+    text-align: center; /* Center text within container */
+    animation: imageMotion 5s infinite alternate; /* Add animation */
 }
+
+.small-image {
+    width: 1000px; /* Adjust width as needed */
+    height: auto; /* Automatically adjust height */
+    border-radius: 8px; /* Add border radius */
+}
+
+.image-text {
+    position: absolute; /* Position text absolutely */
+    bottom: 56px; /* Position text at the bottom */
+    left: 0; /* Position text at the left */
+    width: 100%; /* Occupy full width of container */
+    background-color: green; /* Add background color with transparency */
+    padding: 5px; /* Add padding to improve readability */
+    font-size: 14px; /* Adjust font size */
+    border-radius: 18px; /* Add border radius */
+
+    color: white;
+}
+
+@keyframes imageMotion {
+  50% {
+        transform: translateX(calc( 50px)); /* Move to the center */
+    }
+    100% {
+        transform: translateX(calc( 100px)); /* Move to the left */
+    }
+}
+
+
 </style>
 </head>
-<body>
+<body style="background-color:  green;">
 
 <div class="navbar">
-  <a href="home.html"><img src="Pic1.png" alt="E-Fisp Registration Portal"></a>
-  <h1 style="color: orange;">E-Fisp Registration Portal</h1>
-  <a href="#home">Home <i class="fa fa-home"></i></a>
-  <div class="subnav">
-    <button class="subnavbtn">About <i class="fas fa-info-circle"></i></button>
-    <div class="subnav-content">
-      <a href="#company">E-fisp</a>
-      <a href="#team">Vision</a>
-    </div>
-  </div> 
-  <div class="subnav">
-    <button class="subnavbtn">Learn <i class="fa fa-book-open"></i></button>
-    <div class="subnav-content">
-      <a href="#bring">Plant Guide</a>
-    </div>
-  </div> 
-  <div class="subnav">
-    <button class="subnavbtn">Sign in as<i class="fa fa-user"></i></button>
-    <div class="subnav-content">
-      <a href="#link1">Cooperative Leader</a>
-      <a href="#link2">Member</a>
-    </div>
-  </div>
-  <a href="#contact">Login <i class="fa fa-sign-in-alt"></i></a>
-</div>
-<br><br><br><br>
-<hr style="margin-top: 390px;">
-<footer>
-    <p>&copy; 2024 FISP Registration Web App. All rights reserved.</p>
-    <ul class="footer-links">
-        <li><a href="home.html">Home</a></li>
-        <li><a href="About.html">About</a></li>
-        <li><a href="https://www.facebook.com/your-facebook-page">Facebook</a></li>
-        <li><a href="https://www.instagram.com/your-instagram-profile">Instagram</a></li>
-    </ul>
-    <P>Powered by The Ministry of Agriculture (MOA)</P>
 
-    <!-- Back to Top Button -->
-    <button onclick="topFunction()" id="back-to-top-btn" title="Back to top">&#9650;</button>
+  
+  <div class="container">
+    <img src="Pic1.png" alt="E-Fisp Registration Portal">
+    <h1>E-Fisp Registration Portal</h1>
+  </div>
+  
+  <a href="#home"><i class="fa fa-home"></i> Home</a>
+  <a href="About"><i class="fa fa-info-circle"></i> About</a>
+  <div class="dropdown">
+    <button class="dropbtn">Sign in as 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#"><i class="fa fa-user"></i> Cooperative leader</a>
+      <a href="#"><i class="fa fa-user"></i> Member</a>
+    </div>
+  </div> 
+  <a href="Login"><i class="fa fa-sign-in"></i> Login</a>
+  <a href="Learn"><i class="fa fa-graduation-cap"></i> Learn</a>
+</div>
+
+
+
+
+   
+<br><br><br><br>
+<div class="imagesb">
+  <div class="image-container">
+      <img src="IM.png" alt="Agriculture" class="small-image">
+      <div class="image-text">Agriculture the nation's pride</div>
+  </div>
+  <br><br>
+  <div class="image-container">
+    <h3>MINISTRY OF AGRICULTURE</h3>
+      <img src="girl.png" alt="Girl" class="small-image">
+      <div class="image-text">Empowering women in agriculture</div>
+  </div>
+  <br><br>
+  <div class="image-container">
+      <img src="Ground.png" alt="Ground" class="small-image">
+      <div class="image-text">Crop Diversification for better and fertile soil</div>
+  </div>
+  <br>
+  <div class="image-container">
+      <img src="fam.png" alt="Family" class="small-image">
+      <div class="image-text">A healthy family is a wealthy family</div>
+  </div>
+  <br><br>
+  <div class="image-container">
+    
+    <div class="image-text">Fertilizing for a better tomorrow.E-fisp Niya bonse 👍
+      
+    </div>
+      <img src="Fert.png" alt="Fertilizer" class="small-image">
+    
+  </div>
+</div> <br><br><br><br><br><br>
+
+
+
+
+
+
+<footer style="position: fixed; bottom: 0; width: 100%;">
+  <p>&copy; 2024 FISP Registration Web App. All rights reserved.</p>
+  <ul class="footer-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="About.html">About</a></li>
+      <li><a href="Registration.html">Sign in</a></li>
+      <li><a href="Login.html">Login</a></li>
+      <li><a href="learn.html">Learn</a></li>
+      <li><a href="https://www.facebook.com/your-facebook-page">Facebook</a></li>
+      <li><a href="https://www.instagram.com/your-instagram-profile">Instagram</a></li>
+  </ul>
+  <p>Powered by The Ministry of Agriculture (MOA)</p>
+
+  <!-- Back to Top Button -->
+  <button onclick="topFunction()" id="back-to-top-btn" title="Back to top" style="background-color: orange;">&#9650;</button>
 </footer>
 
 <!-- Add this script at the bottom of your HTML body -->
@@ -178,6 +261,7 @@ body {
         document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
     }
 </script>
+
 
 </body>
 </html>
